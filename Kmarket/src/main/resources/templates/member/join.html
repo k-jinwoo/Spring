@@ -1,3 +1,4 @@
+<html xmlns:th="http://www.thymeleaf.org">
 <th:block th:include="@{member/_header.html}" />
 <main>
 	<div id="member-join">
@@ -7,9 +8,10 @@
 			<div class="normal">
 				<img src="../img/member_join_tit_normal.gif" alt="구매회원 가입">
 				<div class="txt">
-					<img src="../img/member_join_txt_normal.gif" alt="개인 구매회원"> <a
-						href="../member/signup.do?type=normal"><img
-						src="../img/member_join_btn1.gif" alt="회원가입"></a>
+					<img src="../img/member_join_txt_normal.gif" alt="개인 구매회원">
+						<a th:href="@{register}">
+							<img src="../img/member_join_btn1.gif" alt="회원가입">
+						</a>
 				</div>
 			</div>
 			<div class="seller">
@@ -28,3 +30,4 @@
 	</div>
 </main>
 <th:block th:include="@{member/_footer.html}" />
+</html>

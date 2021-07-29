@@ -1,5 +1,6 @@
 package kr.co.kmarket.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,16 @@ public class MemberController {
 	@GetMapping("/member/register")
 	public String register() {
 		return "/member/register";
+	}
+	
+	@PostMapping("/member/register")
+	public String register(HttpServletRequest req, MemberVo vo) {
+		String ip = req.getRemoteAddr();
+		vo.setIp(ip);
+		vo.setType(0); // 0 : 일반회원, 1 : 판매회원, 2 : 관리자
+		service.insertMember(vo);
+		
+		return "redirect:/";
 	}
 	
 	@GetMapping("/member/register-seller")

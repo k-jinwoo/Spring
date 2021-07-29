@@ -52,4 +52,12 @@ public class ShopService {
 		dao.insertOrderDetail(orderId, code);
 	}
 	
+	public List<OrderVo> selectOrders(int orderId){
+		return dao.selectOrders(orderId);
+	}
+	
+	public int updateOrder(OrderVo vo) {
+		return dao.updateOrder(vo);
+	}
+	
 }

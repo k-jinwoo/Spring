@@ -8,6 +8,7 @@ import kr.co.kmarket.vo.MemberVo;
 public interface MemberDao {
 	
 	public MemberVo selectMember(String uid, String pass);
+	public void insertMember(MemberVo vo);
 	
 
 }
